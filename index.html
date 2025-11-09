@@ -1,0 +1,390 @@
+
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>中国漆艺术 - 八千年传承</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            lacquer: '#9D2B22',
+            antique: '#1A1A1A',
+            gold: '#D4AF37',
+          },
+          fontFamily: {
+            serif: ['"Noto Serif SC"', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap');
+    
+    body {
+      font-family: 'Noto Sans SC', sans-serif;
+      scroll-behavior: smooth;
+    }
+    
+    .lacquer-texture {
+      background: linear-gradient(135deg, #4e0a04 0%, #9D2B22 30%, #1A1A1A 100%);
+    }
+    
+    .serif-title {
+      font-family: 'serif';
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      height: 100%;
+      width: 2px;
+      background: linear-gradient(to bottom, transparent, #9D2B22, transparent);
+      transform: translateX(-50%);
+    }
+    
+    .gallery-item:hover .overlay {
+      opacity: 1;
+      transform: translateY(0);
+      backdrop-filter: blur(4px);
+    }
+    
+    .modal {
+      transition: opacity 0.3s ease-in-out, transform 0.4s ease-out;
+    }
+  </style>
+</head>
+<body class="bg-antique text-gray-300">
+<!-- 加载动画 -->
+<div class="fixed inset-0 bg-[rgba(26,26,26,0.95)] flex items-center justify-center z-50 transition-opacity duration-1000" id="loader">
+<div class="lacquer-texture w-64 h-64 rounded-full animate-pulse flex items-center justify-center">
+<span class="text-white text-2xl font-bold">漆 · 艺</span>
+</div>
+</div>
+<!-- 导航栏 -->
+<header class="fixed w-full py-4 px-16 flex justify-between items-center z-40 transition-all duration-300 backdrop-blur-sm bg-[rgba(26,26,26,0.85)]" id="navbar">
+<div class="flex items-center">
+<span class="serif-title text-2xl font-bold text-white tracking-wider">中国漆艺术</span>
+</div>
+<nav>
+<ul class="flex space-x-10">
+<li><a class="text-gray-300 hover:text-white transition-colors relative group" href="#intro">
+          历史渊源 <span class="absolute bottom-0 left-0 w-0 group-hover:w-full h-0.5 bg-lacquer transition-all"></span>
+</a></li>
+<li><a class="text-gray-300 hover:text-white transition-colors relative group" href="#techniques">
+          艺术技艺 <span class="absolute bottom-0 left-0 w-0 group-hover:w-full h-0.5 bg-lacquer transition-all"></span>
+</a></li>
+<li><a class="text-gray-300 hover:text-white transition-colors relative group" href="#gallery">
+          代表作品 <span class="absolute bottom-0 left-0 w-0 group-hover:w-full h-0.5 bg-lacquer transition-all"></span>
+</a></li>
+<li><a class="text-gray-300 hover:text-white transition-colors relative group" href="#innovation">
+          现代发展 <span class="absolute bottom-0 left-0 w-0 group-hover:w-full h-0.5 bg-lacquer transition-all"></span>
+</a></li>
+</ul>
+</nav>
+</header>
+<!-- 全屏Hero区域 -->
+<section class="min-h-screen relative flex items-center justify-center overflow-hidden">
+<div class="lacquer-texture absolute inset-0 z-0"></div>
+<div class="relative z-10 text-center px-16 max-w-4xl pt-20">
+<h1 class="serif-title text-7xl font-black text-white tracking-tight mb-6">
+        八千年漆艺传承
+      </h1>
+<p class="text-xl text-gold leading-relaxed max-w-2xl mx-auto mb-12">
+        从河姆渡的漆碗到明清宫廷的剔红，中国漆艺历经八千年时光淬炼，承载着东方的美学精神与文化记忆
+      </p>
+</div>
+<div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
+<a href="#intro">
+<iconify-icon height="36" icon="system-uicons:chevron-down-double" style="color: #D4AF37" width="36"></iconify-icon>
+</a>
+</div>
+</section>
+<!-- 引言简介板块 -->
+<section class="py-24 px-16" id="intro">
+<div class="flex flex-col items-center max-w-4xl mx-auto text-center">
+<div class="w-32 h-1 bg-gradient-to-r from-transparent via-gold to-transparent mb-16"></div>
+<p class="text-2xl leading-relaxed mb-12 text-gray-200">
+        漆艺是中国最古老的传统工艺之一，最早实物可追溯至8000年前的河姆渡时期。历经商周的装饰艺术，唐宋的技艺巅峰，明清的宫廷盛景，漆器作为东方美学的载体，见证了中华文明的演进。
+      </p>
+<p class="text-xl leading-relaxed max-w-3xl text-gray-400">
+        大漆取自漆树，经数十道工序精心制作，具有防腐耐热特性。漆艺作品不仅具有实用价值，更承载着中国传统哲学思想与审美观念，是中华文化瑰宝中独特的光泽。
+      </p>
+<div class="relative mt-20 w-full max-w-6xl h-[400px]">
+<img alt="A collection of ancient Chinese lacquer artifacts" class="w-full h-full object-cover rounded-xl border border-[rgba(212,175,55,0.3)]" id="1" src="https://modao.cc/agent-py/workspace/6910dfd3fca5b121de8ee211/generated_images/d2c901523d6845fb868424c0d22e8406.jpg"/>
+</div>
+</div>
+</section>
+<!-- 历史渊源时间轴 -->
+<section class="py-24 px-16 bg-[#171717] relative overflow-hidden" id="history">
+<div class="max-w-6xl mx-auto">
+<h2 class="serif-title text-4xl font-bold text-white text-center mb-20">
+        漆艺发展历史轴线
+      </h2>
+<div class="timeline relative">
+<!-- 新石器时代 -->
+<div class="mb-32 flex flex-col md:flex-row items-start">
+<div class="md:w-1/2 text-right md:pr-24 md:mt-8">
+<p class="bg-[rgba(157,43,34,0.1)] rounded-xl border border-gold/40 p-6 backdrop-blur">
+<span class="text-gold text-xl font-bold block mb-2">河姆渡时期 · 公元前6000年</span>
+              考古发现的朱漆木碗是中国最早的漆器实物，开启漆艺发展史
+            </p>
+</div>
+<div class="hidden md:block absolute top-0 left-1/2 w-10 h-10 rounded-full bg-gradient-to-br from-gold/70 to-antique border-2 border-gold flex items-center justify-center z-10 translate-x-[-50%]">
+<div class="w-4 h-4 rounded-full bg-gold"></div>
+</div>
+<div class="md:w-1/2 mt-28 md:mt-0"></div>
+</div>
+<!-- 商周时期 -->
+<div class="mb-32 flex flex-col md:flex-row">
+<div class="md:w-1/2 mt-20 md:mt-0"></div>
+<div class="hidden md:block absolute top-[150px] left-1/2 w-10 h-10 rounded-full bg-gradient-to-br from-gold/70 to-antique border-2 border-gold flex items-center justify-center z-10 translate-x-[-50%] translate-y-10">
+<div class="w-4 h-4 rounded-full bg-gold"></div>
+</div>
+<div class="md:w-1/2 md:pl-24 md:mt-8">
+<p class="bg-[rgba(157,43,34,0.1)] rounded-xl border border-gold/40 p-6 backdrop-blur">
+<span class="text-gold text-xl font-bold block mb-2">商周时期 · 青铜时代</span>
+              漆器与青铜礼器结合发展，出现镶嵌螺钿、雕刻纹饰工艺
+            </p>
+</div>
+</div>
+<!-- 战国时期 -->
+<div class="mb-32 flex flex-col md:flex-row">
+<div class="md:w-1/2 text-right md:pr-24 md:mt-8">
+<p class="bg-[rgba(157,43,34,0.1)] rounded-xl border border-gold/40 p-6 backdrop-blur">
+<span class="text-gold text-xl font-bold block mb-2">战国时期 · 漆艺成熟</span>
+              漆器工艺体系初步形成，胎体从木胎扩展到皮胎、竹胎等多种材质
+            </p>
+</div>
+<div class="hidden md:block absolute top-[300px] left-1/2 w-10 h-10 rounded-full bg-gradient-to-br from-gold/70 to-antique border-2 border-gold flex items-center justify-center z-10 translate-x-[-50%] translate-y-14">
+<div class="w-4 h-4 rounded-full bg-gold"></div>
+</div>
+<div class="md:w-1/2 mt-28 md:mt-0"></div>
+</div>
+<!-- 汉唐宋元 等省略... -->
+<!-- 现代部分 -->
+<div class="mb-32 flex flex-col md:flex-row">
+<div class="md:w-1/2 mt-20 md:mt-0"></div>
+<div class="hidden md:block absolute top-[450px] left-1/2 w-10 h-10 rounded-full bg-gradient-to-br from-gold/70 to-antique border-2 border-gold flex items-center justify-center z-10 translate-x-[-50%] translate-y-20">
+<div class="w-4 h-4 rounded-full bg-gold"></div>
+</div>
+<div class="md:w-1/2 md:pl-24 md:mt-8">
+<p class="bg-[rgba(157,43,34,0.1)] rounded-xl border border-gold/40 p-6 backdrop-blur">
+<span class="text-gold text-xl font-bold block mb-2">当代复兴</span>
+              漆艺列入国家级非物质文化遗产，传统工艺与现代设计融合创新
+            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 艺术技艺展示区 -->
+<section class="py-24 px-16" id="techniques">
+<div class="max-w-6xl mx-auto">
+<h2 class="serif-title text-4xl font-bold text-white text-center mb-16">
+        传统漆艺核心技法
+      </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- 彩绘技艺 -->
+<div class="bg-[rgba(26,26,26,0.8)] p-6 rounded-xl border border-[rgba(212,175,55,0.2)] hover:border-gold transition-all group">
+<div class="bg-gradient-to-r from-gold/10 to-gold/30 p-4 inline-block rounded-lg group-hover:from-gold/20 group-hover:to-gold/40 transition-all mb-6">
+<iconify-icon height="48" icon="ph:paint-brush-bold" style="color: #D4AF37" width="48"></iconify-icon>
+</div>
+<h3 class="text-2xl font-semibold text-white mb-4">彩绘</h3>
+<p class="mb-4 text-gray-400">以彩色漆料在漆面上绘出图案，色彩鲜艳持久，具有独特的东方绘画美感</p>
+<img alt="Colorful Chinese lacquer painting" class="w-full h-48 object-cover rounded-lg" id="2" src="https://modao.cc/agent-py/workspace/6910dfd3fca5b121de8ee211/generated_images/1c8521fb65374013b3c5d8725b5ec41b.jpg"/>
+</div>
+<!-- 描金技艺 -->
+<div class="bg-[rgba(26,26,26,0.8)] p-6 rounded-xl border border-[rgba(212,175,55,0.2)] hover:border-gold transition-all group">
+<div class="bg-gradient-to-r from-gold/10 to-gold/30 p-4 inline-block rounded-lg group-hover:from-gold/20 group-hover:to-gold/40 transition-all mb-6">
+<iconify-icon height="48" icon="icon-park-outline:gold" style="color: #D4AF37" width="48"></iconify-icon>
+</div>
+<h3 class="text-2xl font-semibold text-white mb-4">描金</h3>
+<p class="mb-4 text-gray-400">使用金粉或金箔在漆面上描绘纹样，形成富丽堂皇的装饰效果</p>
+<img alt="Chinese lacquer with gold decoration" class="w-full h-48 object-cover rounded-lg" id="3" src="https://modao.cc/agent-py/workspace/6910dfd3fca5b121de8ee211/generated_images/917900e9467e4849a2b9bb6f606a3624.jpg"/>
+</div>
+<!-- 镶嵌技艺 -->
+<div class="bg-[rgba(26,26,26,0.8)] p-6 rounded-xl border border-[rgba(212,175,55,0.2)] hover:border-gold transition-all group">
+<div class="bg-gradient-to-r from-gold/10 to-gold/30 p-4 inline-block rounded-lg group-hover:from-gold/20 group-hover:to-gold/40 transition-all mb-6">
+<iconify-icon height="48" icon="mingcute:gem-line" style="color: #D4AF37" width="48"></iconify-icon>
+</div>
+<h3 class="text-2xl font-semibold text-white mb-4">镶嵌</h3>
+<p class="mb-4 text-gray-400">在漆层嵌入贝壳、玉石、金属等材料，形成立体精美的装饰效果</p>
+<img alt="Inlaid lacquer artwork with shells" class="w-full h-48 object-cover rounded-lg" id="4" src="https://modao.cc/agent-py/workspace/6910dfd3fca5b121de8ee211/generated_images/d6f6bef692b24c2a8c08182fe1bf12f4.jpg"/>
+</div>
+<!-- 雕漆技艺 -->
+<div class="bg-[rgba(26,26,26,0.8)] p-6 rounded-xl border border-[rgba(212,175,55,0.2)] hover:border-gold transition-all group">
+<div class="bg-gradient-to-r from-gold/10 to-gold/30 p-4 inline-block rounded-lg group-hover:from-gold/20 group-hover:to-gold/40 transition-all mb-6">
+<iconify-icon height="48" icon="ph:chisel-duotone" style="color: #D4AF37" width="48"></iconify-icon>
+</div>
+<h3 class="text-2xl font-semibold text-white mb-4">雕漆</h3>
+<p class="mb-4 text-gray-400">在多层厚漆上雕刻图案，形成立体浮雕效果，以剔红剔彩最为著名</p>
+<img alt="Carved Chinese lacquer box" class="w-full h-48 object-cover rounded-lg" id="5" src="https://modao.cc/agent-py/workspace/6910dfd3fca5b121de8ee211/generated_images/ec39e36e181640699dbd2dcce8619c20.jpg"/>
+</div>
+</div>
+</div>
+</section>
+<!-- 经典作品画廊 -->
+<section class="py-24 px-16 bg-[#171717]" id="gallery">
+<div class="max-w-6xl mx-auto">
+<h2 class="serif-title text-4xl font-bold text-white text-center mb-4">
+        传世精品典藏
+      </h2>
+<p class="text-center text-gold mb-16 max-w-2xl mx-auto">
+        从战国彩绘到明清宫廷珍品，见证漆艺八千年美学巅峰
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- 作品 1 -->
+<div class="gallery-item relative rounded-xl overflow-hidden aspect-square">
+<img alt="Warring States lacquer ear cup with intricate patterns" class="w-full h-full object-cover" id="6" src="https://modao.cc/agent-py/workspace/6910dfd3fca5b121de8ee211/generated_images/fbd73ae825cd4cf58769e6aed37867e8.jpg"/>
+<div class="overlay absolute inset-0 bg-[rgba(157,43,34,0.6)] flex flex-col justify-end p-6 opacity-0 transition-all duration-300 transform translate-y-10">
+<h3 class="text-white text-xl font-bold mb-2">彩绘漆耳杯</h3>
+<p class="text-gold">战国时期 · 湖北荆州出土</p>
+<p class="text-gray-200 mt-2 text-sm">几何云纹与凤鸟纹装饰，体现战国漆艺精湛技艺</p>
+</div>
+</div>
+<!-- 作品 2 -->
+<div class="gallery-item relative rounded-xl overflow-hidden aspect-square">
+<img alt="Ming dynasty carved lacquer box with dragon design" class="w-full h-full object-cover" id="7" src="https://modao.cc/agent-py/workspace/6910dfd3fca5b121de8ee211/generated_images/b3e16f295cf64a839c7d3e5f3db3ae07.jpg"/>
+<div class="overlay absolute inset-0 bg-[rgba(157,43,34,0.6)] flex flex-col justify-end p-6 opacity-0 transition-all duration-300 transform translate-y-10">
+<h3 class="text-white text-xl font-bold mb-2">剔红云龙纹漆盒</h3>
+<p class="text-gold">明代 · 永乐时期</p>
+<p class="text-gray-200 mt-2 text-sm">宫廷御用器物，多层红漆雕刻龙纹，富丽华贵</p>
+</div>
+</div>
+<!-- 作品 3 -->
+<div class="gallery-item relative rounded-xl overflow-hidden aspect-square">
+<img alt="Qing dynasty gold-painted lacquer screen" class="w-full h-full object-cover" id="8" src="https://modao.cc/agent-py/workspace/6910dfd3fca5b121de8ee211/generated_images/29873947e9a84d0bb86296f7856abdc1.jpg"/>
+<div class="overlay absolute inset-0 bg-[rgba(157,43,34,0.6)] flex flex-col justify-end p-6 opacity-0 transition-all duration-300 transform translate-y-10">
+<h3 class="text-white text-xl font-bold mb-2">描金漆屏风</h3>
+<p class="text-gold">清代 · 乾隆时期</p>
+<p class="text-gray-200 mt-2 text-sm">六曲屏风，金粉绘制山水人物图，皇家气派</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 现代应用与发展 -->
+<section class="py-24 px-16" id="innovation">
+<div class="max-w-6xl mx-auto">
+<h2 class="serif-title text-4xl font-bold text-white text-center mb-16">
+        技艺传承与当代创新
+      </h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="bg-gradient-to-br from-[rgba(26,26,26,0.5)] to-[rgba(26,26,26,0.8)] border border-gold/20 rounded-xl p-8 hover:shadow-[0_10px_30px_rgba(157,43,34,0.3)] transition-shadow">
+<iconify-icon class="mb-6" height="64" icon="healthicons:museum" style="color: #D4AF37" width="64"></iconify-icon>
+<h3 class="text-2xl font-semibold text-white mb-4">非遗保护</h3>
+<p class="text-gray-400 mb-6">2006年，漆器髹饰技艺列入国家级非物质文化遗产名录，各地建立传承基地</p>
+<img alt="Lacquer craft master teaching students" class="w-full h-56 object-cover rounded-lg" id="9" src="https://modao.cc/agent-py/workspace/6910dfd3fca5b121de8ee211/generated_images/3085c5c20eaf407d91fd4dbb30306582.jpg"/>
+</div>
+<div class="bg-gradient-to-br from-[rgba(26,26,26,0.5)] to-[rgba(26,26,26,0.8)] border border-gold/20 rounded-xl p-8 hover:shadow-[0_10px_30px_rgba(157,43,34,0.3)] transition-shadow">
+<iconify-icon class="mb-6" height="64" icon="ph:student-bold" style="color: #D4AF37" width="64"></iconify-icon>
+<h3 class="text-2xl font-semibold text-white mb-4">学科建设</h3>
+<p class="text-gray-400 mb-6">中央美术学院等高校设立漆艺专业，培养新一代漆艺传承人</p>
+<img alt="University lacquer art exhibition" class="w-full h-56 object-cover rounded-lg" id="10" src="https://modao.cc/agent-py/workspace/6910dfd3fca5b121de8ee211/generated_images/ff83f658527f417fb95f919137c7acf8.jpg"/>
+</div>
+<div class="bg-gradient-to-br from-[rgba(26,26,26,0.5)] to-[rgba(26,26,26,0.8)] border border-gold/20 rounded-xl p-8 hover:shadow-[0_10px_30px_rgba(157,43,34,0.3)] transition-shadow">
+<iconify-icon class="mb-6" height="64" icon="icon-park-outline:experiment-one" style="color: #D4AF37" width="64"></iconify-icon>
+<h3 class="text-2xl font-semibold text-white mb-4">跨界融合</h3>
+<p class="text-gray-400 mb-6">漆艺与当代设计、建筑空间、时尚产品跨界合作，展现新生命力</p>
+<img alt="Contemporary design incorporating lacquer art" class="w-full h-56 object-cover rounded-lg" id="11" src="https://modao.cc/agent-py/workspace/6910dfd3fca5b121de8ee211/generated_images/238f714c14ac41278d23d324fa6465ca.jpg"/>
+</div>
+</div>
+</div>
+</section>
+<!-- 文化价值总结 -->
+<section class="py-24 px-16 bg-gradient-to-b from-[#171717] to-antique">
+<div class="max-w-4xl mx-auto text-center">
+<div class="max-w-xs mx-auto mb-16">
+<img alt="Ancient lacquer artifact showing detailed craftsmanship" class="w-full rounded-xl border-2 border-gold/50" id="12" src="https://modao.cc/agent-py/workspace/6910dfd3fca5b121de8ee211/generated_images/c2035b0e87b44b1ea05649cbb555f531.jpg"/>
+</div>
+<h2 class="serif-title text-4xl font-bold text-white mb-10">
+        漆艺的文化价值
+      </h2>
+<div class="relative max-w-3xl mx-auto">
+<div class="absolute top-0 left-0 text-9xl text-[rgba(157,43,34,0.1)] font-serif select-none">“</div>
+<blockquote class="relative z-10 text-2xl leading-relaxed text-white italic pl-16 pt-10">
+          漆艺承载着中华造物精神，其独特工艺体系蕴含了东方哲学观与美学观，是中华民族智慧的结晶。从实用器物到艺术珍品，漆器见证了中华文明的延续与创新，成为世界文化宝库中的独特瑰宝。
+        </blockquote>
+</div>
+</div>
+</section>
+<!-- 页脚 -->
+<footer class="py-16 px-16 border-t border-gold/20">
+<div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div>
+<h3 class="serif-title text-2xl font-bold text-white mb-4">中国漆艺术</h3>
+<p class="text-gray-500 mb-6">八千年技艺传承与保护</p>
+<div class="flex space-x-4">
+<a class="text-gray-500 hover:text-gold transition-colors" href="#">
+<iconify-icon height="24" icon="mdi:wechat" width="24"></iconify-icon>
+</a>
+<a class="text-gray-500 hover:text-gold transition-colors" href="#">
+<iconify-icon height="24" icon="mdi:weibo" width="24"></iconify-icon>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-semibold text-white mb-4">导航</h4>
+<ul class="space-y-2">
+<li><a class="text-gray-500 hover:text-gold transition-colors" href="#intro">历史溯源</a></li>
+<li><a class="text-gray-500 hover:text-gold transition-colors" href="#techniques">核心技艺</a></li>
+<li><a class="text-gray-500 hover:text-gold transition-colors" href="#gallery">代表作品</a></li>
+<li><a class="text-gray-500 hover:text-gold transition-colors" href="#innovation">现代发展</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold text-white mb-4">资源中心</h4>
+<ul class="space-y-2">
+<li><a class="text-gray-500 hover:text-gold transition-colors" href="#">非遗名录</a></li>
+<li><a class="text-gray-500 hover:text-gold transition-colors" href="#">传承基地</a></li>
+<li><a class="text-gray-500 hover:text-gold transition-colors" href="#">专业文献</a></li>
+<li><a class="text-gray-500 hover:text-gold transition-colors" href="#">工艺教学</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold text-white mb-4">联系方式</h4>
+<address class="not-italic">
+<p class="text-gray-500 mb-2">中国工艺美术协会漆器专业委员会</p>
+<p class="text-gray-500 mb-2">contact@lacquer-art.com</p>
+<p class="text-gray-500">北京市东城区景山前街4号</p>
+</address>
+</div>
+</div>
+<div class="max-w-6xl mx-auto mt-16 pt-6 border-t border-gold/10 text-center text-gray-600 text-sm">
+<p>© 2025 中国漆艺术传承与发展中心 | 版权所有</p>
+</div>
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // 页面加载动画
+      setTimeout(() => {
+        document.getElementById('loader').style.opacity = '0';
+        setTimeout(() => {
+          document.getElementById('loader').style.display = 'none';
+        }, 1000);
+      }, 1500);
+      
+      // 导航栏滚动效果
+      window.addEventListener('scroll', function() {
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 100) {
+          navbar.style.backgroundColor = 'rgba(26, 26, 26, 0.95)';
+          navbar.classList.add('shadow-lg');
+        } else {
+          navbar.style.backgroundColor = 'rgba(26, 26, 26, 0.85)';
+          navbar.classList.remove('shadow-lg');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
